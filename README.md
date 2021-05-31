@@ -6,8 +6,11 @@ pro2 : NSF server
   
 
 2. cai dat
+
 +Tren Server
+
 +Tren Client
+
 3. ket qua
 4. ket luan
 
