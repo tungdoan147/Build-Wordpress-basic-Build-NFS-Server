@@ -34,7 +34,8 @@
 `yum install nfs-util`
   
   +Chuẩn bị thư mục chia sẻ: Theo đề sẽ là /DATA
-`mkdir /share-data`
+  
+`mkdir /DATA`
   
   +Thay đổi permission cho thư mục
 
