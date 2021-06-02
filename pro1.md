@@ -182,6 +182,10 @@ Làm tất cả xong truy nhập vào trang web vào file index.html của web1.
 
 ### 3.Set Basic-Authen để 2 user vào được site
 
+
+
+### 4.Quản lý database bằng phpmyadmin và mysql CLI
+
 + Quản lý bằng mysql CLI
 
 Sử dụng lệnh `mysql -u root -y ` để truy cập cào MySQL
@@ -224,9 +228,6 @@ Tìm tất cả các giá trị “cookie” có trong file và thay thế bằn
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/ottv72hazn_image.png)
 
 Tại đây ta có thể thao tác với các databases.
-
-### 4.Quản lý database bằng phpmyadmin và mysql CLI
-
 
 ### 5.Cấu hình SSL  HTTPS
 
