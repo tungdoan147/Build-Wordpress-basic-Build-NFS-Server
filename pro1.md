@@ -1,4 +1,4 @@
-#Project 1: Dựng Web Server chạy WordPress trên server linux (tự chọn Ubuntu hoặc CentOS)
+# Project 1: Dựng Web Server chạy WordPress trên server linux (tự chọn Ubuntu hoặc CentOS)
 
 Yêu cầu:
 + Web chạy bằng nginx hoặc Apache
@@ -10,9 +10,9 @@ Yêu cầu:
 
 Chọn CentOS
 
-###1+2.Web chạy bằng Apache + 2 virtual site
+### 1+2.Web chạy bằng Apache + 2 virtual site
 
-####+ Bước 1: Cài đặt stack LAMP
+#### + Bước 1: Cài đặt stack LAMP
   + Cài đặt Apache server với các cấu hình căn bản
   
      -Cài đặt gói Apache httpd service bằng lệnh:
@@ -87,7 +87,7 @@ Chọn CentOS
 
 `show databases;`
 
-####+ Bước 2: Cài đặt 2 virtual host 
+#### + Bước 2: Cài đặt 2 virtual host 
 
 -Trong bài viết e sẽ sử dụng 2 virtual host( 2 tên miền trên cùng 1 địa chỉ IP máy chủ ) là web1.com và web2.com
 
@@ -169,7 +169,7 @@ Làm tất cả xong truy nhập vào trang web vào file index.html của web1.
 
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/8odgcbjihu_image.png)
 
-####+ Bước 3: Cài đặt Wordpress
+#### + Bước 3: Cài đặt Wordpress
 
 + Ở đây e sẽ cài đặt wordpress cho mỗi trang web vừa tạo ( mỗi trang sẽ sử dụng 1 database riêng)
 + Thực hiện download file wordpress, cài đặt như bình thường. Tiếp đó sử dụng MySQL tạo 2 database. Chuyển file wordpress vào 2 thư mục /var/www/web1 và /var/www/web2 
@@ -180,17 +180,17 @@ Làm tất cả xong truy nhập vào trang web vào file index.html của web1.
 
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/zl479w0q5z_image.png)
 
-###3.Set Basic-Authen để 2 user vào được site
+### 3.Set Basic-Authen để 2 user vào được site
 
 
 
-###4.Quản lý database bằng phpmyadmin và mysql CLI
+### 4.Quản lý database bằng phpmyadmin và mysql CLI
 
 
-###5.Cấu hình SSL  HTTPS
+### 5.Cấu hình SSL  HTTPS
 
 
-###6.Cấu hình dùng nginx làm proxy của Apache (chạy chung trên 1 server)
+### 6.Cấu hình dùng nginx làm proxy của Apache (chạy chung trên 1 server)
 
 
 Mô hình 
