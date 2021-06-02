@@ -182,7 +182,48 @@ Làm tất cả xong truy nhập vào trang web vào file index.html của web1.
 
 ### 3.Set Basic-Authen để 2 user vào được site
 
++ Quản lý bằng mysql CLI
 
+Sử dụng lệnh `mysql -u root -y ` để truy cập cào MySQL
+
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/ecpjma00sq_image.png)
+
+Ở đây ta có thao tác để tạo, xem những databases.....
+
++ Quản lý bằng phpmyadmin
+
+ -Cài đặt: 
+ 
+ `yum install http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm`
+ 
+ `yum install phpmyadmin`
+ 
+ -Cấu hình 
+ 
+ `vi  /etc/httpd/conf.d/phpMyAdmin.conf`
+ 
+  Sử dụng # để khóa những dòng sau
+ 
+>`# Require ip 127.0.0.1`
+`# Require ip ::1`
+
+Thêm nội dung sau vào ngay bên dưới 
+
+`Require all granted`
+
+Copy file mẫu config.sample.inc.php và đổi tên thành config.inc.php trong thư mục /usr/share/phpMyAdmin/
+
+Điều chỉnh lại nội dung file config.inc.php
+
+`vi /usr/share/phpMyAdmin/config.inc.php`
+
+Tìm tất cả các giá trị “cookie” có trong file và thay thế bằng “http“.
+
+  - Truy nhập phpMyAdmin
+
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/ottv72hazn_image.png)
+
+Tại đây ta có thể thao tác với các databases.
 
 ### 4.Quản lý database bằng phpmyadmin và mysql CLI
 
