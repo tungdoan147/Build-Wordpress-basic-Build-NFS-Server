@@ -313,7 +313,7 @@ firewall-cmd --reload
 
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/geb0cr3by3_image.png)
 
-	+ F5 ra web2. Như vậy là Request đã được Forward đều vào 2 web server
+    + F5 ra web2. Như vậy là Request đã được Forward đều vào 2 web server
 
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/fd7w7tvvx5_image.png)
 
