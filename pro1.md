@@ -182,7 +182,28 @@ Làm tất cả xong truy nhập vào trang web vào file index.html của web1.
 
 ### 3.Set Basic-Authen để 2 user vào được site
 
++ Tạo user truy nhập httpd bằng lệnh htpasswd :
 
+> `htpasswd -c /etc/httpd/conf/pwfile admin`
+`New password :`
+`Re-type new password :`
+
++ Tạo file cấu hình `auth_basic.conf` :
+
+`vi /etc/httpd/conf.d/auth_basic.conf`
+
++ Thêm vào nội dung sau :
+
+>`<Directory /var/www/html/>`
+`AuthType Basic`
+`AuthName "Basic Authentication"`
+`AuthUserFile /etc/httpd/conf/pwfile`
+`Require valid-user`
+`</Directory>`
+
++ Kết quả khi truy nhập vào web trang web sẽ yêu cầu nhập user và password để truy nhập vào trang web 
+
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/zyt4cylura_image.png)
 
 ### 4.Quản lý database bằng phpmyadmin và mysql CLI
 
