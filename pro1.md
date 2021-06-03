@@ -255,8 +255,67 @@ Tại đây ta có thể thao tác với các databases.
 
 ### 6.Cấu hình dùng nginx làm proxy của Apache (chạy chung trên 1 server)
 
++ Mô hình ( Dựng trên EVE) ( Sử dụng thuật toán Round Robin )
 
-Mô hình 
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/k2h40g9yxk_image.png)
+
++ Cài đặt apache trên 2 web server tương tự như cách làm ở trên 
++ Tạo 2 file html đơn giản trên mỗi trang để có thể nhận biết trang
+
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/jqxxg4cac3_image.png)
+
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/48r1cilojg_image.png)
+
++ Cài đặt nginx
+
+`yum install -y nginx`
+
+`systemctl start nginx.service && systemctl enable nginx.service`
+
++ Cấu hình mở port firewalld
+
+> firewall-cmd --permanent --zone=public --add-service=http 
+firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --reload
+
++ Cấu hình Load Balancing theo thuật toán Round Robin
+
+`vi /etc/nginx/nginx.conf `
+
+  + Thêm vào dòng code
+
+>upstream backends {
+              server 172.16.0.26:80;
+              server 172.16.0.27:80;
+}
+
+  + Mở file Virtual host của nginx (trong bài viết này sử dụng Virtual host default):
+
+`vi /etc/nginx/conf.d/default.conf `
+
+  + Thêm vào dòng code 
+
+>`proxy_redirect off;`
+`proxy_set_header X-Real-IP $remote_addr;`
+`proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`
+`proxy_set_header Host $http_host;`
+
+
+
+  + Tại block location / {} sửa thành như sau để Forward request vào Web Server bên trong:
+
+>location / {
+       proxy_pass http://backends;
+}
+
+  + Khởi động lại nginx 
+    + Truy cập vào địa chỉ của Nginx Load Balancer sẽ thấy hiển thị ra website nằm trên Web server 1. 
+
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/geb0cr3by3_image.png)
+
+	+ F5 ra web2. Như vậy là Request đã được Forward đều vào 2 web server
+
+![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/fd7w7tvvx5_image.png)
 
 
 
