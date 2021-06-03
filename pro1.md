@@ -250,10 +250,7 @@ Tìm tất cả các giá trị “cookie” có trong file và thay thế bằn
 
 Tại đây ta có thể thao tác với các databases.
 
-### 5.Cấu hình SSL  HTTPS
-
-
-### 6.Cấu hình dùng nginx làm proxy của Apache (chạy chung trên 1 server)
+### 5.Cấu hình dùng nginx làm proxy của Apache (chạy chung trên 1 server)
 
 + Mô hình ( Dựng trên EVE) ( Sử dụng thuật toán Round Robin )
 
@@ -317,6 +314,8 @@ firewall-cmd --reload
 
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/fd7w7tvvx5_image.png)
 
+### 6.Cấu hình SSL  HTTPS
+ 
 
 
 
