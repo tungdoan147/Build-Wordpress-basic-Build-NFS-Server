@@ -271,7 +271,8 @@ Tại đây ta có thể thao tác với các databases.
 
 + Cấu hình mở port firewalld
 
-> firewall-cmd --permanent --zone=public --add-service=http 
+> 
+firewall-cmd --permanent --zone=public --add-service=http 
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --reload
 
@@ -292,11 +293,11 @@ firewall-cmd --reload
 
   + Thêm vào dòng code 
 
->`proxy_redirect off;`
-`proxy_set_header X-Real-IP $remote_addr;`
-`proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;`
-`proxy_set_header Host $http_host;`
-
+>
+	proxy_redirect off;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header Host $http_host;
 
 
   + Tại block location / {} sửa thành như sau để Forward request vào Web Server bên trong:
@@ -314,7 +315,7 @@ firewall-cmd --reload
 
 ![alt text](https://s3-ap-southeast-1.amazonaws.com/kipalog.com/fd7w7tvvx5_image.png)
 
-### 6.Cấu hình SSL  HTTPS
+
  
 
 
